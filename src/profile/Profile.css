@@ -1,0 +1,16 @@
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-input {
+    border: none;
+    margin: 10px 0;
+    padding: 10px 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    background-color: #3e4552;
+    color: white;
+    border-radius: 3px;
+}
