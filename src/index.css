@@ -14,4 +14,6 @@ code, pre {
   padding: 10px;
   background-color: #454c58;
   border-radius: 3px;
+  max-width: 100%;
+  overflow: auto;
 }

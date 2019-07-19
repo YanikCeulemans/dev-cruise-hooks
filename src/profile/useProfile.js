@@ -1,26 +1,24 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-export default function() {
-    const [profile, setProfile] = useState({
-        avatarUrl: 'profile_yanik.jpg',
-        firstName: 'Yanik',
-        lastName: 'Ceulemans',
-        age: 28,
-    });
+import * as profileApi from './profileApi';
 
-    return (propName) => {
-        if (!propName) {
+export default function(id) {
+    const [profile, setProfile] = useState(null);
+    useEffect(() => {
+        profileApi.getById(id).then(setProfile);
+    }, [id])
+
+
+    return {
+        profile,
+        inputProps: (propName, transformer = x => x) => {
             return {
-                value: profile,
-                onChange: setProfile,
-            }
+                value: profile[propName],
+                onChange: e => setProfile({
+                    ...profile,
+                    [propName]: transformer(e.target.value),
+                }),
+            };
         }
-        return {
-            value: profile[propName],
-            onChange: e => setProfile({
-                ...profile,
-                [propName]: e.target.value,
-            }),
-        };
-    }
+    };
 }
