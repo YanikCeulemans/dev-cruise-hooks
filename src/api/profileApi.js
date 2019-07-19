@@ -16,5 +16,9 @@ const profiles = new Array(10).fill().map((_, i) => {
 });
 
 export function getById(id) {
-    return resolveAfter(500, profiles[id]);
+    return resolveAfter(500, { ...profiles[id] });
 };
+
+export function getAll() {
+    return resolveAfter(500, [...profiles]);
+}

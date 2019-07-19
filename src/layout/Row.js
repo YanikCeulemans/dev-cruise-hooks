@@ -1,9 +1,10 @@
 import React from 'react';
-import './Avatar.css';
+
+import styles from './row.module.css';
 
 export default function(props) {
     return (
-        <div className="avatar">
+        <div className={styles.row}>
             {props.children}
         </div>
     );

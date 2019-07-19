@@ -1,0 +1,5 @@
+.entry {
+  padding: calc(5px + 1vmin) calc(10px + 1vmin);
+  margin: 5px 0;
+  cursor: pointer;
+}

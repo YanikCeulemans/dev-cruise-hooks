@@ -12,8 +12,11 @@ code, pre {
     monospace;
   margin: 10px;
   padding: 10px;
-  background-color: #454c58;
-  border-radius: 3px;
   max-width: 100%;
   overflow: auto;
+}
+
+.box {
+  background-color: #454c58;
+  border-radius: 3px;
 }
