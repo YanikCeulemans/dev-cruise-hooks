@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import './Profile.css';
 import useProfile from './useProfile';
-import Show from '../helpers/Show';
+// import Show from '../helpers/Show';
 
 export default function(props) {
     // const [lastName, setLastName] = useState('Ceulemans');
@@ -16,7 +16,7 @@ export default function(props) {
             <input className="profile-input" type="number" {...profileCtx.inputProps('age', Number)} />
             <input className="profile-input" type="text" {...profileCtx.inputProps('gender')} />
             {/* <pre>{JSON.stringify(profileInputLens(), null, 4)}</pre> */}
-            <Show value={profileCtx.profile} />
+            {/* <Show value={profileCtx.profile} /> */}
             {/* <Show value={lastName} /> */}
         </div>
     );
