@@ -16,13 +16,13 @@ function renderForUrl(url) {
   const route = parseRouteFromUrl(url);
   switch (route.name) {
     case '': return <ProfileList />;
-    case 'profile': return <ProfileHooks id={route.params.id} />
+    case 'profile': return <ProfileHooks id={route.params.id} />;
+    default: return <h1>404 Not found 🤔</h1>
   }
 }
 
 function App() {
   const url = useRouter();
-  console.dir(url);
   return (
     <div className="App">
       {renderForUrl(url)}

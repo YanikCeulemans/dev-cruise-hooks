@@ -13,7 +13,7 @@ function ProfileList(props) {
       {profiles.map(profile => {
         return (
           <div
-            className={`${styles.entry} box`} key={profile.id}
+            className={`${styles.entry} box with-hover`} key={profile.id}
             onClick={e => myHistory.navigateTo(`/profile/${profile.id}`)}
           >
             <span>{profile.firstName} {profile.lastName}</span>
@@ -25,4 +25,3 @@ function ProfileList(props) {
 }
 
 export default ProfileList;
-

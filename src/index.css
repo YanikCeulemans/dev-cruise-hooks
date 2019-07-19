@@ -20,3 +20,7 @@ code, pre {
   background-color: #454c58;
   border-radius: 3px;
 }
+
+.box.with-hover:hover {
+  background-color: #5f697a;
+}
