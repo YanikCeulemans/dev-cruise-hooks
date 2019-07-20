@@ -15,19 +15,25 @@ function parseRouteFromUrl(url) {
 function renderForUrl(url) {
   const route = parseRouteFromUrl(url);
   switch (route.name) {
-    case '': return <ProfileList />;
-    case 'profile': return <ProfileHooks id={route.params.id} />;
-    default: return <h1>404 Not found 🤔</h1>
+    case '':
+      return <ProfileList />;
+    case 'profile':
+      return <ProfileHooks id={route.params.id} />;
+    default:
+      return (
+        <h1>
+          404 Not found{' '}
+          <span role="img" aria-label="Thinking emoji">
+            🤔
+          </span>
+        </h1>
+      );
   }
 }
 
 function App() {
   const url = useRouter();
-  return (
-    <div className="App">
-      {renderForUrl(url)}
-    </div>
-  );
+  return <div className="App">{renderForUrl(url)}</div>;
 }
 
 export default App;

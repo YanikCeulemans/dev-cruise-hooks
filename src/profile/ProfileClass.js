@@ -8,16 +8,21 @@ export default class ProfileComponent extends React.Component {
   }
 
   componentDidMount() {
-    profileApi.getById(this.props.profileId)
-      .then((profile) => {
-        this.setState({ profile });
-      });
+    profileApi.getById(this.props.profileId).then(profile => {
+      this.setState({ profile });
+    });
 
-    profileApi.subscribeToChanges(this.props.profileId, this.handleProfileChanges);
+    profileApi.subscribeToChanges(
+      this.props.profileId,
+      this.handleProfileChanges
+    );
   }
 
   componentWillUnmount() {
-    profileApi.unsubscribeFromChanges(this.props.profileId, this.handleProfileChanges);
+    profileApi.unsubscribeFromChanges(
+      this.props.profileId,
+      this.handleProfileChanges
+    );
   }
 
   handleProfileChanges(changes) {

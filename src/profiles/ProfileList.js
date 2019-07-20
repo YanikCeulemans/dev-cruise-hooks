@@ -7,16 +7,19 @@ import * as myHistory from '../helpers/history';
 
 function ProfileList(props) {
   const profiles = useProfiles();
-  if (!profiles) return (<h1>Loading...</h1>);
+  if (!profiles) return <h1>Loading...</h1>;
   return (
     <Row>
       {profiles.map(profile => {
         return (
           <div
-            className={`${styles.entry} box with-hover with-anim`} key={profile.id}
+            className={`${styles.entry} box with-hover with-anim`}
+            key={profile.id}
             onClick={e => myHistory.navigateTo(`/profile/${profile.id}`)}
           >
-            <span>{profile.firstName} {profile.lastName}</span>
+            <span>
+              {profile.firstName} {profile.lastName}
+            </span>
           </div>
         );
       })}
