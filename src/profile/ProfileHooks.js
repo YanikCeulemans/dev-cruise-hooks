@@ -5,7 +5,7 @@ import useProfile from './useProfile';
 import Show from '../helpers/Show';
 
 export default function(props) {
-  const profileCtx = useProfile(props.id);
+  const profileCtx = useProfile(props.profileId);
   if (!profileCtx.profile) return <h1>Loading...</h1>;
   return (
     <div className="profile">
