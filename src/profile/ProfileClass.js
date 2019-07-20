@@ -16,7 +16,9 @@ export default class ProfileComponent extends React.Component {
   }
 
   updateProfileProp(propName, value) {
-    this.setState(prevState => ({ ...prevState, [propName]: value }));
+    this.setState(prevState => ({
+      profile: { ...prevState.profile, [propName]: value },
+    }));
   }
 
   render() {
@@ -46,7 +48,7 @@ export default class ProfileComponent extends React.Component {
           className="profile-input box with-hover"
           type="number"
           value={profile.age}
-          onChange={e => this.updateProfileProp('age', e.target.value)}
+          onChange={e => this.updateProfileProp('age', Number(e.target.value))}
         />
         <input
           className="profile-input box with-hover"
