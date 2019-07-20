@@ -4,6 +4,7 @@ import './App.css';
 import ProfileList from './profiles/ProfileList';
 import ProfileHooks from './profile/ProfileHooks';
 import useRouter from './router/useRouter';
+import NotFound from './NotFound';
 
 function parseRouteFromUrl(url) {
   if (url.pathname === '/') return { name: '' };
@@ -20,14 +21,7 @@ function renderForUrl(url) {
     case 'profile':
       return <ProfileHooks id={route.params.id} />;
     default:
-      return (
-        <h1>
-          404 Not found{' '}
-          <span role="img" aria-label="Thinking emoji">
-            🤔
-          </span>
-        </h1>
-      );
+      return <NotFound />;
   }
 }
 
