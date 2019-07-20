@@ -24,3 +24,12 @@ code, pre {
 .box.with-hover:hover {
   background-color: #5f697a;
 }
+
+.box.with-anim {
+  transition-property: transform, background-color;
+  transition-duration: 100ms;
+}
+
+.box.with-anim:hover {
+  transform: scale(1.1);
+}
