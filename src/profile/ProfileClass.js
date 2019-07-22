@@ -1,6 +1,9 @@
 import React from 'react';
 
 import * as profileApi from '../api/profileApi';
+import ProfileInput from './ProfileInput';
+import Avatar from './Avatar';
+import Loader from './Loader';
 import Show from '../helpers/Show';
 
 export default class ProfileComponent extends React.Component {
@@ -23,35 +26,26 @@ export default class ProfileComponent extends React.Component {
 
   render() {
     const { profile } = this.state;
-    if (!profile) return <h1>Loading....</h1>;
+    if (!profile) return <Loader />;
     return (
       <div className="profile">
-        <div
-          className="avatar"
-          style={{
-            backgroundImage: `url(/${profile.avatarUrl})`,
-          }}
-        />
-        <input
-          className="profile-input box with-hover"
+        <Avatar url={profile.avatarUrl} />
+        <ProfileInput
           type="text"
           value={profile.firstName}
           onChange={e => this.updateProfileProp('firstName', e.target.value)}
         />
-        <input
-          className="profile-input box with-hover"
+        <ProfileInput
           type="text"
           value={profile.lastName}
           onChange={e => this.updateProfileProp('lastName', e.target.value)}
         />
-        <input
-          className="profile-input box with-hover"
+        <ProfileInput
           type="number"
           value={profile.age}
           onChange={e => this.updateProfileProp('age', Number(e.target.value))}
         />
-        <input
-          className="profile-input box with-hover"
+        <ProfileInput
           type="text"
           value={profile.gender}
           onChange={e => this.updateProfileProp('gender', e.target.value)}
