@@ -2,14 +2,14 @@ import React from 'react';
 
 import styles from './profileList.module.css';
 import useProfiles from './useProfiles';
-import Row from '../layout/Row';
+import RowLayout from '../layout/RowLayout';
 import * as myHistory from '../helpers/history';
 
 function ProfileList(props) {
   const profiles = useProfiles();
   if (!profiles) return <h1>Loading...</h1>;
   return (
-    <Row>
+    <RowLayout>
       {profiles.map(profile => {
         return (
           <div
@@ -23,7 +23,7 @@ function ProfileList(props) {
           </div>
         );
       })}
-    </Row>
+    </RowLayout>
   );
 }
 

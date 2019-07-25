@@ -1,11 +1,11 @@
 import React from 'react';
 
 import './App.css';
-import useRouter from './router/useRouter';
-import Router from './Router';
+import useUrl from './router/useUrl';
+import Router from './router/Router';
 
 function App() {
-  const url = useRouter();
+  const url = useUrl();
   return (
     <div className="App">
       <Router url={url} />

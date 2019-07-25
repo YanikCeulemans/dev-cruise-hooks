@@ -1,7 +1,7 @@
 import React from 'react';
 
 import * as myHistory from './helpers/history';
-import Router from './Router';
+import Router from './router/Router';
 
 export default class AppClass extends React.Component {
   constructor(props) {

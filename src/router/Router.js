@@ -1,9 +1,9 @@
 import React from 'react';
 
-import ProfileList from './profiles/ProfileList';
-import ProfileHooks from './profile/ProfileHooks';
-import ProfileComponent from './profile/ProfileClass';
-import NotFound from './NotFound';
+import ProfileList from '../profiles/ProfileList';
+import ProfileHooks from '../profile/ProfileHooks';
+import ProfileComponent from '../profile/ProfileClass';
+import NotFound from '../NotFound';
 
 function parseRouteFromUrl(url) {
   if (url.pathname === '/') return { name: '' };
