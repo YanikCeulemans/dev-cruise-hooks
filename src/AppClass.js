@@ -1,35 +1,64 @@
 import React from 'react';
+import './App.css';
+import './profile/Profile.css';
 
-import * as myHistory from './helpers/history';
-import Router from './router/Router';
+import * as profileApi from './api/profileApi';
+
+import Loader from './helpers/Loader';
+import Show from './helpers/Show';
+import Avatar from './profile/Avatar';
+import ProfileInput from './profile/ProfileInput';
+import RowLayout from './layout/RowLayout';
 
 export default class AppClass extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      url: myHistory.getCurrentLocation(),
-    };
-    this.onHistoryChange = this.onHistoryChange.bind(this);
-    this.stopListening = () => {};
+    this.state = { profile: null };
   }
 
   componentDidMount() {
-    this.stopListening = myHistory.listen(this.onHistoryChange);
+    profileApi.getById(0).then(profile => {
+      this.setState({ profile });
+    });
   }
 
-  componentWillUnmount() {
-    this.stopListening();
-  }
-
-  onHistoryChange(url) {
-    this.setState({ url });
+  updateProfileProp(propName, value) {
+    this.setState(prevState => ({
+      profile: { ...prevState.profile, [propName]: value },
+    }));
   }
 
   render() {
-    const { url } = this.state;
+    const { profile } = this.state;
+    if (!profile) return <Loader />;
     return (
       <div className="App">
-        <Router url={url} />
+        <RowLayout className="profile">
+          <Avatar url={profile.avatarUrl} />
+          <ProfileInput
+            type="text"
+            value={profile.firstName}
+            onChange={e => this.updateProfileProp('firstName', e.target.value)}
+          />
+          <ProfileInput
+            type="text"
+            value={profile.lastName}
+            onChange={e => this.updateProfileProp('lastName', e.target.value)}
+          />
+          <ProfileInput
+            type="number"
+            value={profile.age}
+            onChange={e =>
+              this.updateProfileProp('age', Number(e.target.value))
+            }
+          />
+          <ProfileInput
+            type="text"
+            value={profile.gender}
+            onChange={e => this.updateProfileProp('gender', e.target.value)}
+          />
+          <Show value={profile} />
+        </RowLayout>
       </div>
     );
   }
