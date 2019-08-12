@@ -8,3 +8,11 @@
   align-items: center;
   overflow: auto;
 }
+
+.counter {
+  font-size: 200px;
+}
+
+.counter button {
+  font-size: 200px;
+}

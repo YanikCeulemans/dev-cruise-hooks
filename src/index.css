@@ -18,8 +18,15 @@ pre {
 }
 
 .box {
-  background-color: #454c58;
+  background: #454c58;
   border-radius: 3px;
+}
+
+button.box {
+  border: 0;
+  color: inherit;
+  width: 200px;
+  margin: 0 50px;
 }
 
 .box.with-hover:hover {
