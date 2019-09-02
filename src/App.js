@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import './profile/Profile.css';
 
-export default class AppClass extends React.Component {
+export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { counter: 1 };
