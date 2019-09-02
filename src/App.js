@@ -1,17 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import './profile/Profile.css';
+import { useCounter } from './useCounter';
 
-function useCounter(initialValue) {
-  const [counter, setCounter] = useState(initialValue);
-
-  const increment = () => setCounter(counter + 1);
-  const decrement = () => setCounter(counter - 1);
-
-  return [counter, increment, decrement];
-}
-
-export default function AppClass() {
+export default function App() {
   const [counter, increment, decrement] = useCounter(1);
   return (
     <div className="App">
