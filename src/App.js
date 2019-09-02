@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import './profile/Profile.css';
 
-export default function AppClass() {
+export default function App() {
   const [counter, setCounter] = useState(1);
   return (
     <div className="App">
