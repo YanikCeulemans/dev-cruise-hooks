@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import './profile/Profile.css';
 
-export default class AppClass extends React.Component {
+export default class App extends React.Component {
   render() {
     return (
       <div className="App">
