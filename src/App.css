@@ -11,6 +11,9 @@
 
 .counter {
   font-size: 200px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 .counter button {
